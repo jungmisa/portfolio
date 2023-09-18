@@ -1,2 +1,5 @@
-body{width: 100vw;
-background: url() no-repeat center top;}
+body {
+    width: 100vw;
+    background: url(../img/wide\ Frame.png)no-repeat center top;
+    height: 9669px;
+}
