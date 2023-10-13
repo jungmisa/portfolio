@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    margin: auto;
+}
+
+.wrap {
+    width: 100%;
+    min-width: 1280px;
+    background-color: lightblue;
+}
+
+/* 헤더 - 네비게이션 */
+.navigation {
+    display: flex;
+    height: 80px;
+    padding: 25px 50px;
+    gap: 870px;
+    justify-content: center;
+    align-items: flex-start;
+    align-self: stretch;
+    border: 1px solid blue;
+}
+
+.nav-menu {
+    display: flex;
+    width: 261px;
+    height: 28px;
+    gap: 50px;
+}
+
+header {
+    display: flex;
+    max-width: 1080px;
+    height: 424px;
+    border: 1px solid blue;
+}
+
+header .introduce {
+    width: 557px;
+    height: 256px;
+    border: 1px solid blue;
+}
+
+header .photo {
+    width: 486px;
+    height: 608px;
+    border: 1px solid blue;
+    background: url(../img/intro_box.png),50% / cover no-repeat;
+
+
+}
