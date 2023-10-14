@@ -1,7 +1,8 @@
+/* 가장 큰 부분 */
 .wrap {
     width: 100%;
     min-width: 1280px;
-    background-color: #fff;
+    background-color: lightblue;
 }
 
 /* 헤더 - 네비게이션 */
@@ -12,7 +13,7 @@
     padding: 25px 50px;
     justify-content: center;
     align-items: flex-start;
-    gap: 870px;
+    gap: 900px;
     align-self: stretch;
     border: 1px solid blue;
 }
@@ -31,50 +32,62 @@
     border: 1px solid blue;
 }
 
-.nav-menu li {
+.nav-menu a>div {
     font-size: 16px;
 }
 
+/* 자기 소개 및 사진 들어가는 곳 */
 header {
     display: flex;
-    max-width: 1248px;
-    margin: auto;
-    height: 610px;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    max-width: 1080px;
+    height: auto;
+    margin: auto;
+    padding: 100px;
     gap: 10px;
     align-self: stretch;
-    border: 1px solid blue;
+    /* border: 2px solid red; */
 }
 
-header .introduce {
+.introduce-box {
+    display: flex;
+    width: 1080px;
+    align-items: center;
+    gap: 28px;
+    /* border: 1px solid blue; */
+}
+
+.introduce {
     width: 540px;
-    height: 300px;
-    border: 1px solid blue;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+    /* border: 1px solid blue; */
 }
 
-.introduce p:nth-child(1) {
-    font-size: 20px;
+.introduce div:nth-child(1) {
+    font-size: 25px;
     font-weight: bold;
-    margin-bottom: 40px;
 }
 
-.introduce p:nth-child(2) {
+.introduce div:nth-child(2) {
     font-size: 40px;
     font-weight: bold;
     line-height: 55px;
 }
 
-.introduce p:nth-child(3) {
+.introduce div:nth-child(3) {
     font-size: 15px;
-    line-height: 55px;
 }
 
 header .photo {
     width: 486px;
     height: 600px;
-    border: 1px solid blue;
     background: url(../img/intro_box.png), 50% / cover no-repeat;
+    /* border: 1px solid blue; */
 }
 
 /* 스킬 부분 */
@@ -87,16 +100,20 @@ header .photo {
     align-items: center;
     gap: 10px;
     align-self: stretch;
-    background-color: lightgray;
+    /* border: 1px solid blue; */
 }
 
-.skill-box {
+.skill-sectin-box {
     display: flex;
     margin: auto;
     gap: 50px;
 }
 
-.skill-detail {
+/* 이미지로 소개하는 나의 프로필 */
+.skill-introduce {
+    max-width: 1000px;
+    height: auto;
+    margin: auto;
     display: flex;
     padding: 180px 140px;
     flex-direction: column;
@@ -104,6 +121,92 @@ header .photo {
     align-items: center;
     gap: 10px;
     align-self: stretch;
-    background-color: lightgray;
-    opacity: .5;
+    /* border: 2px solid red; */
+}
+
+.skill-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 125px;
+    /* border: 1px solid blue; */
+}
+
+.skill-img_1 {
+    display: flex;
+    width: 250px;
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    /* border: 1px solid blue; */
+}
+
+.skill-img_1 .img_1 {
+    width: 130px;
+    height: 130px;
+    background: url(../img/Image\ placeholder.png) no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+    border: 1px solid blue;
+}
+
+.skill-img_1 div:nth-child(2) {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.skill-img_1 div:nth-child(3) {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* latest work Section: 작업물 구간 */
+.latest-work-section {
+    max-width: 1200px;
+    height: auto;
+    margin: auto;
+    display: flex;
+    padding: 20px 100px;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+    align-self: stretch;
+    /* border: 2px solid red; */
+}
+
+.latest-work-section>div:nth-child(1) {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.stripe {
+    display: flex;
+    align-items: flex-start;
+    gap: 67.5px;
+}
+
+/* 프로젝트 이미지 및 텍스트 묶음 박스 */
+.work {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 20px;
+    gap: 10px;
+    /* border: 1px solid grey; */
+}
+
+.img2 {
+    width: 315px;
+    height: 315px;
+    background: url(../img/Image4.png), lightgray 50% / cover no-repeat;
+    /* border: 1px solid blue; */
+}
+
+.work>div:nth-child(2) {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.work>div:nth-child {
+    font-size: 16px;
 }
