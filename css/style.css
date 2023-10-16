@@ -2,11 +2,12 @@
 .wrap {
     width: 100%;
     min-width: 1280px;
-    background-color: lightblue;
+    background-color: #fff;
 }
 
-/* 헤더 - 네비게이션 */
+/* 네비게이션 */
 .navigation {
+    position: fixed;
     display: flex;
     width: 100%;
     height: 80px;
@@ -15,6 +16,7 @@
     align-items: flex-start;
     gap: 900px;
     align-self: stretch;
+    background-color: #fff;
     border: 1px solid blue;
 }
 
@@ -29,7 +31,7 @@
     width: 261px;
     height: 28px;
     gap: 50px;
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
 }
 
 .nav-menu a>div {
@@ -37,6 +39,7 @@
 }
 
 /* 자기 소개 및 사진 들어가는 곳 */
+/* 가상선택자로 선 넣는 거 해야함 */
 header {
     display: flex;
     flex-direction: column;
@@ -65,7 +68,7 @@ header {
     flex-direction: column;
     align-items: flex-start;
     gap: 40px;
-    /* border: 1px solid blue; */
+    border: 1px solid blue;
 }
 
 .introduce div:nth-child(1) {
@@ -86,8 +89,8 @@ header {
 header .photo {
     width: 486px;
     height: 600px;
-    background: url(../img/intro_box.png), 50% / cover no-repeat;
-    /* border: 1px solid blue; */
+    background: url(../img/Group\ 1.png), 50% / cover no-repeat;
+    border: 1px solid blue;
 }
 
 /* 스킬 부분 */
@@ -144,10 +147,28 @@ header .photo {
 .skill-img_1 .img_1 {
     width: 130px;
     height: 130px;
-    background: url(../img/Image\ placeholder.png) no-repeat;
+    background: url(../img/icon-01.png) no-repeat;
     background-position: 50% 50%;
     background-size: cover;
-    border: 1px solid blue;
+    border: 1px solid grey;
+}
+
+.skill-img_1 .img_2 {
+    width: 130px;
+    height: 130px;
+    background: url(../img/icon-02.png) no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+    border: 1px solid grey;
+}
+
+.skill-img_1 .img_3 {
+    width: 130px;
+    height: 130px;
+    background: url(../img/icon-03.png) no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+    border: 1px solid;
 }
 
 .skill-img_1 div:nth-child(2) {
@@ -157,7 +178,7 @@ header .photo {
 
 .skill-img_1 div:nth-child(3) {
     font-size: 16px;
-    font-weight: bold;
+    font-weight: 400;
 }
 
 /* latest work Section: 작업물 구간 */
@@ -199,6 +220,7 @@ header .photo {
     width: 315px;
     height: 315px;
     background: url(../img/Image4.png), lightgray 50% / cover no-repeat;
+    margin-bottom: 20px;
     /* border: 1px solid blue; */
 }
 
@@ -209,4 +231,51 @@ header .photo {
 
 .work>div:nth-child {
     font-size: 16px;
+}
+
+.career {
+    display: flex;
+    padding: 100px 100px 150px 100px;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+    border: 1px solid red;
+}
+
+.cr-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 55px;
+    border: 1px solid blue;
+}
+
+.cr-text {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.cr-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 67.5px;
+    border: 1px solid blue;
+}
+
+.career-box {
+    display: flex;
+    width: 315px;
+    padding: 30px 50px 30px 30px;
+    align-items: flex-start;
+    gap: 10px;
+    border: 1px solid grey;
+}
+
+.cr-text2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 80px;
+    align-self: stretch;
 }
