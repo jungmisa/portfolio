@@ -40,8 +40,10 @@
 
 /* 애니메이션 구간 */
 
+
 /* 자기 소개 및 사진 들어가는 곳 */
 /* 가상선택자로 선 넣는 거 해야함 */
+
 header {
     display: flex;
     flex-direction: column;
@@ -264,7 +266,8 @@ header .photo {
 .btn {
     background-color: lightgrey;
     border-radius: 50px;
-    padding: 8px;
+    padding: 12px;
+    font-size: 14px;
 }
 
 /* 경력 */
@@ -299,14 +302,15 @@ header .photo {
 }
 
 .career-box {
-    display: flex;
+    /* display: flex; */
     width: 315px;
     /* padding: 30px 50px 30px 30px; */
     padding: 20px;
     align-items: flex-start;
     gap: 10px;
-    /* border: 1px solid blue; */
+    border: 1px solid blue;
 }
+
 
 .cr-text_1 {
     display: flex;
@@ -321,15 +325,7 @@ header .photo {
     font-size: 20px;
 }
 
-.cr-box2 div:nth-child(2) {
-    width: 200px;
-    line-height: 25px;
-}
-
-.cr-01 {
-    width: 200px;
-}
-
+/* .cr-box2{border: 1px solid blue;} */
 /* 푸터: 연락처 */
 footer {
     max-width: 1080px;
@@ -370,57 +366,66 @@ footer {
     border: 1px solid blue;
 }
 
-.text-input {
-    width: 470px;
-    height: auto;
+.contact-message {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 40px;
+    border: 1px solid blue;
 }
 
-.text-input2 {
-    width: 100%;
+.text-input {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+form {
+    width: 470px;
     height: auto;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 20px;
-    border: 1px solid blue;
+    
+    /* border: 1px solid lightgrey; */
 }
 
-.text-input2 .input {
-    display: flex;
+.input-1 input,
+.input-2 input {
     width: 470px;
     height: 27px;
     padding: 21px 30px;
-    align-items: flex-start;
-    gap: 10px;
-    border: 1px solid blue;
+    background-color: #ccc
 }
 
-.text-input2>div:nth-child(3) {
-    display: flex;
+.input-3 input {
     width: 470px;
-    height: 189px;
+    height: 190px;
     padding: 21px 30px;
-    align-items: flex-start;
-    gap: 10px;
+    background-color: #ccc
+        /* border: 1px solid blue; */
 }
 
-.submit-button {
-    width: 71px;
-    height: 30px;
-    display: flex;
-    padding: 25px 82px;
-    align-items: flex-start;
-    gap: 10px;
-    border: 1px solid blue;
-    border-radius: 50px;
+
+
+.input-1 input,
+.input-2 input,
+.input-3 input {
+    border: none;
 }
 
-.submit-button .div {
+input::placeholder {
+    font-size: 16px;
+}
+
+button {
     text-align: center;
+    padding: 4px 25px;
+    border-radius: 20px;
     line-height: 30px;
+    border: none;
+    background-color: #ccc;
     /* 150% */
 }
