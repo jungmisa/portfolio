@@ -256,94 +256,87 @@ nav {
 
 /* 프로젝트 목업 */
 
-.section5 {
-    position: relative;
+
+.section5{
+	position: relative;
+}
+.section5 .container{
+	position: relative; /* absolute를 제어하는 relative 는 꼭 크기를 넣을것  */
+	width: 100%;
+	height: 100%;
+}
+.section5 .item{
+	position: absolute;
+	top: 0;
+	height: 30vw;
+}
+.section5 .item.left{
+	width: 60%; /*  */
+	transition: left 1s ease-in-out;
+	left: -100%;
+}
+.section5.is-animated .item.left{
+	left: 0%;
+	transition: left 2s ease-in-out;
 }
 
-.project {
-    display: flex;
-    margin: auto;
-    width: 1280px;
-    height: auto;
-    overflow: hidden;
-    /* border: 1px solid blue; */
-    gap: 68px;
+.section5 .item.right{
+	width: 40%;
+	right: 0;
 }
 
-.section5,
-.project {
-    position: relative;
-    width: 100%;
-    height: 100%;
+.left .mockup img,
+.left .mockup .mask {
+	position: absolute;
+	top: 0;
+	left: 0;
 }
-
-.item {
-    width: 100%;
-    height: auto;
-    /* border: 1px solid blue; */
-}
-
-.section5 .item.right {
-    width: 40%;
-    right: 0;
-}
-
 .left .mockup.pc {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    margin-left: 100px;
+	position: relative;
+	width: 60%;
+	height: 100%;
+	margin-left: 100px;
 }
 
-
-/* 프로젝트 오른쪽에 들어가는 내용 */
-.item-container {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.screen,
+.device {
+	width: 100%;
+}
+.screen {
+	z-index: 3;
+}
+.device {
+	z-index: 4;
+}
+.section5 .mockup.pc .mask{
+	z-index: 8;
+	/* 수정 */
+	width: 32.3vw;
+	height: 61.8%;
+	overflow: hidden;
+	left: 5.2%;
+	top: 6%;
 }
 
-.item-text1 {
-    width: 80%;
-    margin-top: 30px;
-    line-height: 40px;
-    font-weight: bold;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #ccc;
+/* mobile */
+.left .mockup.mobile {
+	position: relative;
+	width: 20%;
+	height: 60%;
+	top: -76%;
+	left: 60%;
+	z-index: 99;
 }
-
-.item-text1 span {
-    color:#62DAB7
-  }
-  
-
-.item-text1>div:nth-child(1) {
-    font-size: 12px;
-    font-size: bold;
-    color: #ccc;
+.left .mockup.mobile .mask {
+	z-index: 999;
+	/* 마스크는 %X */
+	width: 10.5vw;
+	height: 100%;
+	border-radius: 16px 16px 0 0;
+	overflow: hidden;
+	top: 10.8%;
+	left: 7%;
 }
-
-.item-text1>div:nth-child(2) {
-    font-size: 32px;
-    font-size: bold;
-}
-
-.item-text2 {
-    width: 100%;
-    font-size: 18px;
-    line-height: 40px;
-    /* border: 1px solid blue; */
-}
-
-.item-btn {
-    display: flex;
-    gap: 10px;
-}
-
-.item-btn>button {
-    background-color: #62DAB7;
-}
-
 
 
 

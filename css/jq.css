@@ -1,20 +1,19 @@
 /* scrollbar */
 body::-webkit-scrollbar {
-	width: 4em;
+	width: 1em;
 	background: rgb(207, 238, 174);
 	background: #fff;
 }
 
 body::-webkit-scrollbar-thumb {
-	width: 1em;
-	height: 1em;
+	width: 0.5em;
 	background: #62DAB7;
 	border-radius: 5rem;
 }
 
 body::-webkit-scrollbar-button {
-	width: 3em;
-	height: 3em;
+	width: 2em;
+	height: 2em;
 	background-color: #fff;
 	box-shadow: 1px 1px 3px #7b7b7b;
 }
@@ -158,6 +157,8 @@ section {
 
 .label {
     position: absolute;
-    top: 40px; 
+    top: -40px; 
+	font-size: 20px;
+	font-weight: bold;
 }
 
