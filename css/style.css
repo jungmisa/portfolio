@@ -1,74 +1,58 @@
 /* 가장 큰 부분 */
 .wrap {
     width: 100%;
-    min-width: 1280px;
     background-color: #fff;
-}
-
-/* 네비게이션 */
-.navigation {
-    position: fixed;
-    display: flex;
-    width: 100%;
-    height: 80px;
-    padding: 25px 50px;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 900px;
-    align-self: stretch;
-    background-color: #fff;
+    overflow-x: hidden;
     /* border: 1px solid blue; */
 }
+
+.inner{margin: auto;}
+
+/* 네비게이션 */
 
 .logo {
     width: 69px;
-    height: 23px;
-    /* border: 1px solid blue; */
+    height: 23px;/* 
+    border: 1px solid blue; */
 }
 
-.nav-menu {
+
+nav{
     display: flex;
-    width: 261px;
-    height: 28px;
-    gap: 50px;
-    /* border: 1px solid blue; */
 }
-
-.nav-menu a>div {
-    font-size: 16px;
-}
-
-/* 애니메이션 구간 */
-
 
 /* 자기 소개 및 사진 들어가는 곳 */
 /* 가상선택자로 선 넣는 거 해야함 */
 
-header {
+.about {
+    min-width: 1280px;
+    position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    max-width: 1080px;
+    align-self: stretch;
+    justify-content: center;
     height: auto;
-    margin: auto;
     padding: 100px;
     gap: 10px;
-    align-self: stretch;
     /* border: 2px solid red; */
 }
 
 .introduce-box {
     display: flex;
-    width: 1080px;
     align-items: center;
+    width: 1080px;
+    height: auto;
     gap: 28px;
+    position: relative;
     /* border: 1px solid blue; */
 }
 
 .introduce {
-    width: 540px;
     display: flex;
+    position: relative;
+    width: 540px;
+    height: auto;
     flex-direction: column;
     align-items: flex-start;
     gap: 40px;
@@ -90,8 +74,9 @@ header {
     font-size: 15px;
 }
 
-header .photo {
-    width: 486px;
+.about .photo {
+    /* position: relative; */
+    min-width: 486px;
     height: 600px;
     background: url(../img/Group\ 1.png), 50% / cover no-repeat;
     /* border: 1px solid blue; */
@@ -99,51 +84,30 @@ header .photo {
 
 /* 스킬 부분 */
 .skill-section {
+    position: relative;
+    top: 40%;
     display: flex;
     margin: auto;
-    height: 167px;
-    padding: 0px 66px;
+    height: 210px;
+    padding: 0px 60px;
     justify-content: center;
     align-items: center;
     gap: 10px;
     align-self: stretch;
-    /* border: 1px solid blue; */
-}
-
-.skill-section {
-    position: relative;
-}
-
-.skill-section::before,
-.skill-section::after {
-    content: "";
-    position: absolute;
-    width: 1080px;
-    height: 1px;
-    background-color: #ccc;
-}
-
-.skill-section::before {
-    top: -10px;
-    /* 위쪽 여백 조정 */
-}
-
-.skill-section::after {
-    bottom: -10px;
-    /* 아래쪽 여백 조정 */
 }
 
 .skill-sectin-box {
     display: flex;
     margin: auto;
     gap: 50px;
+    /* border: 1px solid blue; */
+    padding: 20px;
+    border-top: 2px solid #ccc;
+    border-bottom: 2px solid #ccc;
 }
 
 /* 이미지로 소개하는 나의 프로필 */
 .skill-introduce {
-    max-width: 1000px;
-    height: auto;
-    margin: auto;
     display: flex;
     padding: 180px 140px;
     flex-direction: column;
@@ -210,9 +174,8 @@ header .photo {
 
 /* latest work Section: 작업물 구간 */
 .latest-work-section {
-    max-width: 1200px;
-    height: auto;
     margin: auto;
+    height: auto;
     display: flex;
     padding: 20px 100px;
     flex-direction: column;
@@ -278,7 +241,7 @@ header .photo {
     align-items: center;
     gap: 10px;
     align-self: stretch;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 .cr-section {
@@ -286,7 +249,7 @@ header .photo {
     flex-direction: column;
     align-items: center;
     gap: 55px;
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
 }
 
 .cr-text {
@@ -298,7 +261,7 @@ header .photo {
     display: flex;
     align-items: flex-start;
     gap: 67.5px;
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
 }
 
 .career-box {
@@ -388,7 +351,7 @@ form {
     flex-direction: column;
     align-items: flex-start;
     gap: 20px;
-    
+
     /* border: 1px solid lightgrey; */
 }
 
