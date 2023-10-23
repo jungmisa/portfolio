@@ -25,7 +25,6 @@ nav {
 }
 
 /* 자기 소개 및 사진 들어가는 곳 */
-/* 가상선택자로 선 넣는 거 해야함 */
 
 .about {
     min-width: 1280px;
@@ -36,10 +35,17 @@ nav {
     align-self: stretch;
     justify-content: center;
     height: auto;
-    padding: 100px;
+    padding: 60px 100px;
     gap: 10px;
-    /* border: 2px solid red; */
 }
+
+section::after {
+    content: "";
+    display: block;
+    margin: auto;
+    border-bottom: 1px solid var(--text3);
+    width: 80%;
+  }
 
 .introduce-box {
     display: flex;
@@ -81,22 +87,19 @@ nav {
     /* position: relative; */
     min-width: 486px;
     height: 600px;
-    background: url(../img/Group\ 1.png), 50% / cover no-repeat;
+    background: url(../img/port_img-01-01.png), 50% / cover no-repeat;
     /* border: 1px solid blue; */
 }
 
 /* 스킬 부분 */
-.skill-section {
-    position: relative;
-    top: 40%;
+
+.skill-title {
+    font-size: 32px;
+    font-weight: bold;
     display: flex;
-    margin: auto;
-    height: 210px;
-    padding: 0px 60px;
+    height: auto;
+    padding: 20px 60px;
     justify-content: center;
-    align-items: center;
-    gap: 10px;
-    align-self: stretch;
 }
 
 .skill-sectin-box {
@@ -104,16 +107,15 @@ nav {
     margin: auto;
     gap: 100px;
     /* border: 1px solid blue; */
-    padding: 20px;
-    border-top: 2px solid #ccc;
-    border-bottom: 2px solid #ccc;
+    border: 1px solid blue;
 }
 
 /* 이미지로 소개하는 나의 프로필 */
+
 .skill-introduce {
     display: flex;
     padding: 180px 140px;
-    flex-direction: column;
+    /* flex-direction: column; */
     justify-content: center;
     align-items: center;
     gap: 10px;
@@ -137,6 +139,7 @@ nav {
     gap: 30px;
     /* border: 1px solid blue; */
 }
+
 
 .skill-img_1 .img_1 {
     width: 130px;
@@ -166,6 +169,7 @@ nav {
 }
 
 .skill-img_1 div:nth-child(2) {
+    color: var(--secondary);
     font-size: 32px;
     font-weight: bold;
 }
@@ -173,6 +177,16 @@ nav {
 .skill-img_1 div:nth-child(3) {
     font-size: 14px;
     line-height: 25px;
+}
+
+/* 이미지 선택시 호버 효과 */
+.img_move {
+    display: block;
+    transition: all 0.5s ease-out;
+}
+
+.img_move:hover {
+    transform: translateY(-30px);
 }
 
 /* 경력 */
@@ -183,7 +197,7 @@ nav {
     align-items: center;
     gap: 10px;
     align-self: stretch;
-    /* border: 1px solid red; */
+    /*  border: 1px solid red; */
 }
 
 .cr-section {
@@ -191,7 +205,6 @@ nav {
     flex-direction: column;
     align-items: center;
     gap: 55px;
-    /* border: 1px solid blue; */
 }
 
 .cr-text {
@@ -213,7 +226,8 @@ nav {
     padding: 20px;
     align-items: flex-start;
     gap: 10px;
-    border: 1px solid blue;
+    background-color: var(--background);
+    border: 2px solid var(--primary1);
 }
 
 
@@ -260,39 +274,38 @@ nav {
     position: relative;
 }
 
+.pro-title {
+    margin: auto;
+    width: 1280px;
+    height: auto;
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    padding: 20px 20px;
+}
+
 .project {
     display: flex;
     margin: auto;
     width: 1280px;
-    height: auto;
+    height: 540px;
     overflow: hidden;
+    margin-bottom: 60px;
+    gap: 70px;
     /* border: 1px solid blue; */
-    gap: 68px;
 }
 
-.section5,
-.project {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
 
 .item {
-    width: 100%;
-    height: auto;
+    width: 610px;
+    height: 540px;
     /* border: 1px solid blue; */
 }
 
 .section5 .item.right {
     width: 40%;
     right: 0;
-}
-
-.left .mockup.pc {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    margin-left: 100px;
+    /* border: 1px solid blue; */
 }
 
 
@@ -300,7 +313,7 @@ nav {
 .item-container {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
 }
 
 .item-text1 {
@@ -313,9 +326,9 @@ nav {
 }
 
 .item-text1 span {
-    color:#62DAB7
-  }
-  
+    color: #62DAB7
+}
+
 
 .item-text1>div:nth-child(1) {
     font-size: 12px;
@@ -350,6 +363,7 @@ nav {
 
 
 /* 디자인작업물 이미지 및 텍스트 묶음 박스 */
+
 .work {
     display: flex;
     flex-direction: column;
@@ -385,7 +399,7 @@ nav {
 /* .cr-box2 { border: 1px solid blue; } */
 /* 푸터: 연락처 */
 footer {
-    max-width: 1080px;
+    max-width: 1280px;
     margin: auto;
     display: flex;
     padding: 0px 100px 70px 100px;

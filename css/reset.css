@@ -141,14 +141,13 @@ table {
 }
 
 :root {
-    --primary: #EBD6AD;
-    --secondary: #EDD6D1;
+    --primary1: #74E5C3;
+    --primary2: #5AB59A;
+    --secondary: #BEA380;
     --text1: #1C1C1C;
     --text2: #646478;
     --text3: #A7A7A7;
-    --background1: #F4EBE2;
-    --background2: #fff;
-    --basic: #8D8070;
+    --background: #fff;
 }
 
 html {

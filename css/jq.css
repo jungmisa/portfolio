@@ -122,15 +122,18 @@ nav .gnb li a:hover:after {
 section {
 	overflow-x: hidden;
 	position: relative;
-	/* border: 1px solid blue; */
+	/* border: 1px solid lightgrey; */
 }
 
 /* 애니메이션바 */
+
+
+
 .progress-bar {
 	position: relative;
 	width: 60vw;
 	height: 30px;
-	margin: 3em auto;
+	margin: 4em auto;
 	background-color: #ccc;
 	border-radius: 20px;
 }
@@ -156,9 +159,24 @@ section {
 }
 
 .label {
-    position: absolute;
-    top: -40px; 
+	position: absolute;
+	top: -40px;
 	font-size: 20px;
 	font-weight: bold;
 }
 
+/* 타입 애니메이션 */
+@keyframes changeText {
+	0% { opacity: 1; }
+	50% { opacity: 0; }
+	100% { opacity: 1; }
+  }
+  
+  #animated-text {
+	color: var(--primary1);
+	animation: changeText 5s linear infinite;
+  }
+  
+
+
+/* 프로젝트 애니메이션 */

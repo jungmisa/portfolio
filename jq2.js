@@ -104,19 +104,46 @@ $(function () {
     }
 });
 
-//타입 애니메이션
-$(document).ready(function() {
-    setInterval(function() {
-        var currentText = $('#animated-text').text();
-        if (currentText == '디자이너') {
-            $('#animated-text').text('나무늘보');
-        } else {
-            $('#animated-text').text('디자이너');
-        }
-    },2500); // Change text every second
+
+//프로젝트박스
+
+const sectionss = $('section');
+console.log(sectionss);
+let speed = Math.floor(win.height() * 0.5);
+let topArr = [];
+let winSCT;
+//sections.offsetTop
+sectionss.each(function (i, o) {
+    const sectionTop = $(o).offset().top;
+    console.log(sectionTop);
+	topArr.push(sectionTop);
+});
+win.on('scroll', () => {
+	winSCT = win.scrollTop();
+	if (winSCT > topArr[0] - speed) {
+		sectionss.eq(4).addClass('is-animated').siblings().removeClass('is-animated');
+	}
 });
 
-
-
-
+function pipScroll(params) {
+	const devices = ['.mockup.pc', '.mockup.mobile', '.mockup.tablet'];
+	$.each(devices, function (i, deviceEl) {
+		const device = $(deviceEl);
+		const screen = device.find('.screen');
+		const mask = device.find('.mask');
+		const hightDifference = screen.innerHeight() - mask.innerHeight();
+		console.log(hightDifference);
+		device.on({
+			mouseenter: function () {
+				screen.stop().animate({ top: -hightDifference }, 1000);
+			},
+			mouseleave: function () {
+				screen.stop().animate({ top: 0 }, 1000);
+			},
+		});
+	});
+}
+win.on('resize', function () {
+	pipScroll();
+});
 
