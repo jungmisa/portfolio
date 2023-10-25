@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/jq.css">
+    <script src="https://code.jquery.com/jquery-1.12.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+    <script src="jq.js" defer></script>
 </head>
 
 <body>
@@ -30,7 +33,7 @@
                         <li><a href="#section3">career</a></li>
                         <li><a href="#section4">work</a></li>
                         <li><a href="#section5">project</a></li>
-                        <li><a href="#section5">portfolio</a></li>
+                        <li><a href="#section6">portfolio</a></li>
                     </ul>
                 </nav>
             </div>
@@ -186,86 +189,28 @@
             </section>
             <!-- //세션4 -->
             <!-- 세션5: project -->
-            <section class="section5" id="section5">
-                <div class="pro-title">
-                    프로젝트
-                </div>
-                <div class="project">
+            <section class="section5 projects" id="section5">
+                <div class="container">
                     <div class="item left">
                         <div class="mockup pc">
+                            <!-- 프로젝트 스크린샷 들어가는 요소 -->
+                            <!-- 마스크 이미지 옆에 단말기 요소 넣으면 됨 -->
                             <div class="mask">
-                                <img src="./img/pc예시.png" alt="" class="screen">
+                                <img src="./img/project1_pc.png" alt="" class="screen">
                             </div>
-                            <img src="" alt="" class="device">
-                        </div> <!-- //.mockup.pc -->
+                            <img src="./img/desktop.png" alt="" class="device">
+                        </div>
                         <div class="mockup mobile">
-                            <div class="mask"><img src="" alt="" class="screen"></div>
-                            <img src="" alt="" class="device">
-                        </div><!-- //.mockup.mobile -->
-                    </div><!-- //.left -->
-                    <div class="item right">
-                        <div class="item-container">
-                            <div class="item-text1">
-                                <div><span>●</span>project01</div>
-                                <div>훕훕베이글</div>
+                            <!-- (mask>img.screen)+img.device -->
+                            <div class="mask">
+                                <img src="./img/project1_mobile.png" alt="" class="screen">
                             </div>
-                            <div class="item-text2">
-                                <div>1.구현기술</div>
-                                <div>2.배포매체: PC,Tablet,Mobile</div>
-                                <div>3.작업기간</div>
-                                <div>4. 본인기여도</div>
-                                <div>5.브라우저 호환성</div>
-                                <div>6.제작 페이지수</div>
-                                <div>7.특징</div>
-                            </div>
-                            <div class="item-btn">
-                                <button><a href="#">프로젝트 보기</a></button>
-                                <button><a href="#">깃허브 보기</a></button>
-                                <button><a href="#">기획서 보기</a></button>
-                            </div>
+                            <img src="./img/mobile.png" alt="" class="device">
                         </div>
                     </div>
-                    <!-- //.right -->
-                </div>
-                <!-- 프로젝트2 -->
-                <div class="project">
-                    <div class="item left">
-                        <div class="mockup pc">
-                            <div class="mask">
-                                <img src="./img/pc예시.png" alt="" class="screen">
-                            </div>
-                            <img src="" alt="" class="device">
-                        </div> <!-- //.mockup.pc -->
-                        <div class="mockup mobile">
-                            <div class="mask"><img src="" alt="" class="screen"></div>
-                            <img src="" alt="" class="device">
-                        </div><!-- //.mockup.mobile -->
-                    </div><!-- //.left -->
-                    <div class="item right">
-                        <div class="item-container">
-                            <div class="item-text1">
-                                <div><span>●</span>project02</div>
-                                <div>달콤커피</div>
-                            </div>
-                            <div class="item-text2">
-                                <div>1.구현기술</div>
-                                <div>2.배포매체: PC,Tablet,Mobile</div>
-                                <div>3.작업기간</div>
-                                <div>4. 본인기여도</div>
-                                <div>5.브라우저 호환성</div>
-                                <div>6.제작 페이지수</div>
-                                <div>7.특징</div>
-                            </div>
-                            <div class="item-btn">
-                                <button><a href="#">프로젝트 보기</a></button>
-                                <button><a href="#">깃허브 보기</a></button>
-                                <button><a href="#">기획서 보기</a></button>
-                            </div>
-                        </div>
+                    <div class="item right">    
                     </div>
-                    <!-- //.right -->
                 </div>
-                <!-- 프로젝트2 -->
             </section>
             <!-- //세션5: project -->
             <!-- 세션6: portfolio -->
@@ -377,9 +322,6 @@
         </footer>
         <!-- //연락처 구간 -->
     </div>
-    <script src="https://code.jquery.com/jquery-1.12.0.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
-    <script src="jq.js"></script>
 </body>
 
 </html>

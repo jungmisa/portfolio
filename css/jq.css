@@ -90,45 +90,8 @@ nav .gnb li a:hover:after {
 	transform: scaleX(1);
 }
 
-/* sideNav */
-
-.sideNav {
-	position: fixed;
-	top: 10%;
-	right: 5%;
-	z-index: 999;
-}
-
-.sideNav a {
-	display: inline-block;
-	padding: 1em;
-	background: rgba(0, 0, 0, 0.5);
-	color: #fff;
-	margin-bottom: 1em;
-}
-
-.sideNav li.on a:before {
-	content: '😃';
-}
-
-.sideNav li.on a {
-	background-color: #62DAB7;
-	/* 클릭시 변경할 색상 */
-}
-
-/* section */
-/* sectionIn */
-
-section {
-	overflow-x: hidden;
-	position: relative;
-	/* border: 1px solid lightgrey; */
-}
 
 /* 애니메이션바 */
-
-
-
 .progress-bar {
 	position: relative;
 	width: 60vw;
@@ -167,16 +130,126 @@ section {
 
 /* 타입 애니메이션 */
 @keyframes changeText {
-	0% { opacity: 1; }
-	50% { opacity: 0; }
-	100% { opacity: 1; }
-  }
-  
-  #animated-text {
+	0% {
+		opacity: 1;
+	}
+
+	50% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+#animated-text {
 	color: var(--primary1);
 	animation: changeText 5s linear infinite;
-  }
-  
+}
+
 
 
 /* 프로젝트 애니메이션 */
+
+.projects {
+	position: relative;
+	overflow: hidden;
+}
+
+/* 하위요소들이 크기를 가지기위해 지정 */
+.projects .container {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.item {
+	position: absolute;
+	top: 0;
+	height: 30vw;
+}
+
+.item.left {
+	width: 60vw;
+	transition: left 1s ease-in-out;
+	left: -100%;
+}
+
+.item.right {
+	width: 40vw;
+	right: 0;
+	background-color: var(--primary1);
+}
+
+.projects.is-animated .left {
+	left: 0;
+}
+
+/* //왼쪽에서 오른쪽으로 목업이 진입 */
+
+/* pip */
+
+.left .mockup.pc {
+	position: relative;
+	margin-left: clamp(5%, 100px, 10%);
+	width: 60%;
+	height: 100%;
+}
+
+.left .mockup img,
+.left .mockup .mask {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.left .mockup.pc {
+	position: relative;
+	width: 60%;
+	height: 100%;
+	margin-left: 100px;
+}
+
+.screen,
+.device {
+	width: 100%;
+}
+
+.screen {
+	z-index: 3;
+}
+
+.device {
+	z-index: 4;
+}
+
+.section4 .mockup.pc .mask {
+	z-index: 8;
+	/* 수정 */
+	width: 32.3vw;
+	height: 61.8%;
+	overflow: hidden;
+	left: 5.2%;
+	top: 6%;
+}
+
+/* mobile */
+.left .mockup.mobile {
+	position: relative;
+	width: 20%;
+	height: 60%;
+	top: -76%;
+	left: 60%;
+	z-index: 99;
+}
+
+.left .mockup.mobile .mask {
+	z-index: 999;
+	width: 10.5vw;
+	height: 100%;
+	border-radius: 10px 10px 0 0;
+	overflow: hidden;
+	top: 10.8%;
+	left: 7%;
+}

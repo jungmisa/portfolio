@@ -5,7 +5,9 @@ const win = $(window);
 const gnb = $('.gnb li');
 const sections = $('.section');
 const sideNav = $('.sideNav >li');
-
+const speed = Math.floor($(window).height() * 0.9);
+let winSCT;
+let topArr = [];
 //gnb
 gnb.on({
     /*     mouseover: function (e) { //마우스가 요소 위에 올라왔을때 할 일
@@ -17,17 +19,6 @@ gnb.on({
             e.preventDefault();
             $(this).removeClass('on');
         }, */
-    click: function () {
-        let tg = $(this);
-        let index = tg.index();
-        let section = sections.eq(index); //요소를 선택한다.
-        let offset = section.offset().top; //속성을 가져온다.
-        $('html, body').stop().animate({ scrollTop: offset }, 1000, 'easeOutCirc');
-    },
-})
-
-//sideNav
-sideNav.on({
     click: function () {
         let tg = $(this);
         let index = tg.index();
@@ -116,7 +107,50 @@ $(document).ready(function() {
     },2500); // Change text every second
 });
 
+// 프로젝트 애니메이션
+sections.each((i, section) => {
+    const sectionTop = $(section).offset().top;
+    console.log(sectionTop);
+    topArr.push(sectionTop);
+});
 
+win.on('scroll', () => {
+    winSCT = win.scrollTop();
+    // 프로젝트 애니메이션
+    // 목업이 날아옴
+    if (winSCT > topArr[4] - speed && winSCT < topArr[4]) {
+        /* section.removeClass('is-animated') */
+        sections.eq(4).addClass('is-animated').siblings()
+            .removeClass('is-animated');
+            console.log(sections);
+    }
+    if (winSCT > topArr[5] - speed && winSCT < topArr[4]) {
+        /* section.removeClass('is-animated') */
+        sections.eq(5).addClass('is-animated');
+        pipScroll();
+    }
+});
 
-
-
+// 마스크의 높이 / 스크린의 높이
+function pipScroll() {
+    //const devices = ['.mockup.pc', '.mockup.mobile'];
+    const devices = $('.mockup.pc, .mockup.mobile');
+    //$.each(devices, function (i, deviceEl) {
+    devices.each(function (i, deviceEl) {
+        let device = $(this);
+        let screen = device.find('.mask>img');
+        let mask = device.find('.mask');
+        let heightDifference=screen.innerHeight()
+        -mask.innerHeight();
+        device.data('heightDifference', heightDifference);
+        device.on({
+            mouseenter:function(){
+                screen.stop().animate({top:-heightDifference}, 1000)
+            },
+            mouseleave:function(){screen.stop().animate({top:0}, 1000)}
+        })
+    });
+}
+win.on('resize', function(){
+   pipScroll();
+});

@@ -35,7 +35,7 @@ nav {
     align-self: stretch;
     justify-content: center;
     height: auto;
-    padding: 60px 100px;
+    padding: 100px;
     gap: 10px;
 }
 
@@ -270,98 +270,6 @@ section::after {
 
 /* 프로젝트 목업 */
 
-.section5 {
-    position: relative;
-}
-
-.pro-title {
-    margin: auto;
-    width: 1280px;
-    height: auto;
-    text-align: center;
-    font-size: 32px;
-    font-weight: bold;
-    padding: 20px 20px;
-}
-
-.project {
-    display: flex;
-    margin: auto;
-    width: 1280px;
-    height: 540px;
-    overflow: hidden;
-    margin-bottom: 60px;
-    gap: 70px;
-    /* border: 1px solid blue; */
-}
-
-
-.item {
-    width: 610px;
-    height: 540px;
-    /* border: 1px solid blue; */
-}
-
-.section5 .item.right {
-    width: 40%;
-    right: 0;
-    /* border: 1px solid blue; */
-}
-
-
-/* 프로젝트 오른쪽에 들어가는 내용 */
-.item-container {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.item-text1 {
-    width: 80%;
-    margin-top: 30px;
-    line-height: 40px;
-    font-weight: bold;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #ccc;
-}
-
-.item-text1 span {
-    color: #62DAB7
-}
-
-
-.item-text1>div:nth-child(1) {
-    font-size: 12px;
-    font-size: bold;
-    color: #ccc;
-}
-
-.item-text1>div:nth-child(2) {
-    font-size: 32px;
-    font-size: bold;
-}
-
-.item-text2 {
-    width: 100%;
-    font-size: 18px;
-    line-height: 40px;
-    /* border: 1px solid blue; */
-}
-
-.item-btn {
-    display: flex;
-    gap: 10px;
-}
-
-.item-btn>button {
-    background-color: #62DAB7;
-}
-
-
-
-
-
-
 /* 디자인작업물 이미지 및 텍스트 묶음 박스 */
 
 .work {
@@ -370,6 +278,7 @@ section::after {
     align-items: flex-start;
     line-height: 20px;
     gap: 10px;
+    padding: 100px
     /* border: 1px solid red; */
 }
 
