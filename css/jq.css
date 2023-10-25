@@ -7,7 +7,7 @@ body::-webkit-scrollbar {
 
 body::-webkit-scrollbar-thumb {
 	width: 0.5em;
-	background: #62DAB7;
+	background: #62dab7;
 	border-radius: 5rem;
 }
 
@@ -34,7 +34,7 @@ nav {
 }
 
 nav.sticky {
-	background: #62DAB7;
+	background: #62dab7;
 	position: fixed;
 	z-index: 222;
 }
@@ -90,7 +90,6 @@ nav .gnb li a:hover:after {
 	transform: scaleX(1);
 }
 
-
 /* 애니메이션바 */
 .progress-bar {
 	position: relative;
@@ -108,7 +107,7 @@ nav .gnb li a:hover:after {
 	bottom: 0;
 	width: 0;
 	border-radius: 20px;
-	background: #62DAB7;
+	background: #62dab7;
 }
 
 .progress-bar .rate {
@@ -148,13 +147,12 @@ nav .gnb li a:hover:after {
 	animation: changeText 5s linear infinite;
 }
 
-
-
 /* 프로젝트 애니메이션 */
 
 .projects {
 	position: relative;
-	overflow: hidden;
+	width: 100%;
+	height: 100vh;
 }
 
 /* 하위요소들이 크기를 가지기위해 지정 */
@@ -164,22 +162,23 @@ nav .gnb li a:hover:after {
 	height: 100%;
 }
 
-.item {
+.projects .item {
+	margin-top: 10vw;
 	position: absolute;
 	top: 0;
 	height: 30vw;
 }
 
-.item.left {
+.projects .item.left {
 	width: 60vw;
 	transition: left 1s ease-in-out;
 	left: -100%;
 }
 
-.item.right {
+.projects .item.right {
 	width: 40vw;
 	right: 0;
-	background-color: var(--primary1);
+	/* border: 1px solid var(--primary1); */
 }
 
 .projects.is-animated .left {
@@ -224,7 +223,7 @@ nav .gnb li a:hover:after {
 	z-index: 4;
 }
 
-.section4 .mockup.pc .mask {
+.projects .mockup.pc .mask {
 	z-index: 8;
 	/* 수정 */
 	width: 32.3vw;
@@ -252,4 +251,118 @@ nav .gnb li a:hover:after {
 	overflow: hidden;
 	top: 10.8%;
 	left: 7%;
+}
+
+/* 버튼 애니메이션 */
+
+.frame {
+	display: flex;
+	gap: 10;
+}
+
+button {
+	margin: 20px;
+}
+
+.custom-btn {
+	width: 130px;
+	height: 40px;
+	color: #fff;
+	border-radius: px;
+	padding: 10px 25px;
+	font-size: 16px;
+	font-weight: bold;
+	background: transparent;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	position: relative;
+	display: inline-block;
+	box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
+		7px 7px 20px 0px rgba(0, 0, 0, .1),
+		4px 4px 5px 0px rgba(0, 0, 0, .1);
+	outline: none;
+}
+
+.btn-project {
+	background-color:var(--primary1)
+	;
+	background-image: rgb(116, 229, 207);
+	background: linear-gradient(241deg, rgba(116, 229, 207, 1) 0%, rgba(148, 255, 164, 1) 100%);
+	line-height: 42px;
+	padding: 0;
+	border: none;
+}
+
+.btn-project span {
+	color: var(--text2);
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.btn-project:before,
+.btn-project:after {
+	position: absolute;
+	content: "";
+	right: 0;
+	bottom: 0;
+	background: var(--primary1);
+	transition: all 0.3s ease;
+}
+
+.btn-project:before {
+	height: 0%;
+	width: 2px;
+	
+}
+
+.btn-project:after {
+	width: 0%;
+	height: 2px;
+}
+
+.btn-project:hover:before {
+	height: 100%;
+}
+
+.btn-project:hover:after {
+	width: 100%;
+}
+
+.btn-project:hover {
+	background: transparent;
+}
+
+.btn-project span:hover {
+	color: var(--primary1);
+}
+
+.btn-project span:before,
+.btn-project span:after {
+	position: absolute;
+	content: "";
+	left: 0;
+	top: 0;
+	background: var(--primary1);
+	transition: all 0.3s ease;
+	border-radius: 20px;
+}
+
+.btn-project span:before {
+	width: 2px;
+	height: 0%;
+}
+
+.btn-project span:after {
+	height: 2px;
+	width: 0%;
+}
+
+.btn-project span:hover:before {
+	height: 100%;
+}
+
+.btn-project span:hover:after {
+	width: 100%;
 }

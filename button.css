@@ -1,0 +1,119 @@
+body {
+    background: #e0e5ec;
+  }
+  h1 {
+    position: relative;
+    text-align: center;
+    color: #353535;
+    font-size: 50px;
+    font-family: "Cormorant Garamond", serif;
+  }
+  
+  p {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    text-align: center;
+    font-size: 18px;
+    color: #676767;
+  }
+  .frame {
+    width: 90%;
+    margin: 40px auto;
+    text-align: center;
+  }
+  button {
+    margin: 20px;
+  }
+  .custom-btn {
+    width: 130px;
+    height: 40px;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 25px;
+    font-family: 'pretendard', sans-serif;
+    font-weight: 500;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+     box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+     7px 7px 20px 0px rgba(0,0,0,.1),
+     4px 4px 5px 0px rgba(0,0,0,.1);
+    outline: none;
+  }
+  /* 8 */
+  .btn-project {
+    background-color: #74E5C3;;
+  background-image:rgb(116,229,207);
+  background: linear-gradient(241deg, rgba(116,229,207,1) 0%, rgba(148,255,164,1) 100%);
+    line-height: 42px;
+    padding: 0;
+    border: none;
+  }
+  .btn-project span {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  .btn-project:before,
+  .btn-project:after {
+    position: absolute;
+    content: "";
+    right: 0;
+    bottom: 0;
+    background: #74E5C3;;
+    /*box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
+                -4px -4px 6px 0 rgba(116, 125, 136, .2), 
+      inset -4px -4px 6px 0 rgba(255,255,255,.5),
+      inset 4px 4px 6px 0 rgba(116, 125, 136, .3);*/
+    transition: all 0.3s ease;
+  }
+  .btn-project:before{
+     height: 0%;
+     width: 2px;
+  }
+  .btn-project:after {
+    width: 0%;
+    height: 2px;
+  }
+  .btn-project:hover:before {
+    height: 100%;
+  }
+  .btn-project:hover:after {
+    width: 100%;
+  }
+  .btn-project:hover{
+    background: transparent;
+  }
+  .btn-project span:hover{
+    color: #74E5C3;;
+  }
+  .btn-project span:before,
+  .btn-project span:after {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    background: #74E5C3;;
+    /*box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
+                -4px -4px 6px 0 rgba(116, 125, 136, .2), 
+      inset -4px -4px 6px 0 rgba(255,255,255,.5),
+      inset 4px 4px 6px 0 rgba(116, 125, 136, .3);*/
+    transition: all 0.3s ease;
+  }
+  .btn-project span:before {
+    width: 2px;
+    height: 0%;
+  }
+  .btn-project span:after {
+    height: 2px;
+    width: 0%;
+  }
+  .btn-project span:hover:before {
+    height: 100%;
+  }
+  .btn-project span:hover:after {
+    width: 100%;
+  }
