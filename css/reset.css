@@ -141,6 +141,7 @@ table {
 /* custom */
 * {
     box-sizing: border-box;
+    -webkit-font-smoothing: antialosed;
 }
 
 :root {

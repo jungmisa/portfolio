@@ -376,3 +376,71 @@ a:hover {
 .btn-project span:hover:after {
 	width: 100%;
 }
+
+/* 탭을 만들어보자 */
+
+.port-container>div:nth-child(1) {
+	font-size: 32px;
+	text-align: center;
+}
+
+.tad-wrapper {
+	margin: 5rem auto;
+}
+
+.tab-menu {
+	width: 900px;
+	padding-left: 1em;
+}
+
+.tab-menu {
+	font-size: 18px;
+}
+
+.tab-menu li {
+	display: inline-block;
+	list-style: none;
+	margin-right: 25px;
+	background-color: var(--primary1);
+	padding: 8px 12px;
+	border-radius: 50px;
+	margin-bottom: 20px;
+}
+
+.tab-menu li a {
+	color: var(--background);
+	text-decoration: underline;
+	font-weight: bold;
+	line-height: 27px;
+	text-decoration: none;
+	display: block;
+	padding: 0 20px;
+}
+
+/* 클릭하면 색상 바뀌는 장치 */
+.tab-menu li a.active {
+	color: var(--secondary);
+}
+
+
+.tab-content {
+	position: relative;
+	min-height: 550px;
+	max-width: 1300px;
+}
+
+
+.tab-content>div {
+	position: absolute;
+	top: 0;
+	left:0;
+	display: none;
+	background: lightgray;
+	padding: 1em;
+}
+
+.tab-content>div.active {
+	display: block;
+}
+
+#tab-1-1>p{margin-bottom: 20px;}

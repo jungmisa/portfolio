@@ -304,7 +304,8 @@ section::after {
 
 /* 그래픽 디자인 작업물 배치 */
 .row {
-    width: 1200px;
+    width: 834px;
+    height: auto;
     margin: 0 auto;
 }
 
@@ -316,7 +317,7 @@ section::after {
 
 .row ul li {
     display: inline-table;
-    width: 30%;
+    width: 40%;
 }
 
 .row ul li img {
@@ -339,7 +340,7 @@ section::after {
     position: fixed;
     left: 50%;
     top: 100px;
-    width: 80%;
+    width: 60%;
     transform: translateX(-50%);
     height: 60vh;
     overflow-y: auto;
@@ -364,4 +365,6 @@ footer {
     align-self: stretch;
 }
 
-.footer-info{text-align: center;}
+.footer-info {
+    text-align: center;
+}

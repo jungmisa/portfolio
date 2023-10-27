@@ -159,6 +159,29 @@ win.on('resize', function () {
 });
 
 
+// 탭 구현
+$(() => {
+    const tadWrapper = $('.tad-wrapper');
+    tadWrapper.each(function () {
+        let currentEl = $(this); //this = 윈도우
+        const targetLink = currentEl.find('.tab-menu a');
+        const tabContent = currentEl.find('.tab-content>div');
+
+        targetLink.on('click', function (e) {
+            e.preventDefault();
+            let tg = $(this); //위 this랑 다름. 타겟된 a태그 셋
+            let currentLink = tg.attr("href");
+            console.log(currentLink); //아이디 탭 속성이 반환된다.
+            tabContent.hide();
+            $(currentLink).show();
+            
+            targetLink.removeClass('active');
+            tg.addClass('active');
+        })
+
+    }) /* 반복적으로 사용가능 */
+})
+
 // 갤러리 이미지
 const pics = $('.pic');
 const lightbox = $('#lightbox');
@@ -169,10 +192,10 @@ pics.on('click', function () {
     lightImg.load(bigLocation);
     lightbox.css('display','block');
     // 바깥의 스크롤 사라짐
-    $('.latest-work-section').addClass('all_scrollFixed');
+    $('.port-container').addClass('all_scrollFixed');
     // 클릭하면 사라짐
     lightbox.on('click',function(){
         lightbox.css('display', 'none');
-        $('.latest-work-section').removeClass('all_scrollFixed');
+        $('.port-container').removeClass('all_scrollFixed');
     })
 })
