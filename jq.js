@@ -157,3 +157,22 @@ function pipScroll() {
 win.on('resize', function () {
 	pipScroll();
 });
+
+
+// 갤러리 이미지
+const pics = $('.pic');
+const lightbox = $('#lightbox');
+const lightImg = $('#lightImage');
+
+pics.on('click', function () {
+    const bigLocation = $(this).attr("data-src");
+    lightImg.load(bigLocation);
+    lightbox.css('display','block');
+    // 바깥의 스크롤 사라짐
+    $('.latest-work-section').addClass('all_scrollFixed');
+    // 클릭하면 사라짐
+    lightbox.on('click',function(){
+        lightbox.css('display', 'none');
+        $('.latest-work-section').removeClass('all_scrollFixed');
+    })
+})

@@ -91,6 +91,7 @@ nav .gnb li a:hover:after {
 }
 
 /* 애니메이션바 */
+
 .progress-bar {
 	position: relative;
 	width: 60vw;
@@ -257,7 +258,7 @@ nav .gnb li a:hover:after {
 
 .frame {
 	display: flex;
-	gap: 10;
+	gap: 10px;
 }
 
 button {

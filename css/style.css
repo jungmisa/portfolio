@@ -197,7 +197,7 @@ section::after {
     align-items: center;
     gap: 10px;
     align-self: stretch;
-    /*  border: 1px solid red; */
+    /* border: 1px solid red; */
 }
 
 .cr-section {
@@ -244,29 +244,6 @@ section::after {
     font-size: 20px;
 }
 
-/* latest work Section: 작업물 구간 */
-.latest-work-section {
-    margin: auto;
-    height: auto;
-    display: flex;
-    padding: 40px 60px;
-    flex-direction: column;
-    align-items: center;
-    gap: 80px;
-    align-self: stretch;
-    /* border: 2px solid red; */
-}
-
-.latest-work-section>div:nth-child(1) {
-    font-size: 30px;
-    font-weight: bold;
-}
-
-.stripe {
-    display: flex;
-    align-items: flex-start;
-    gap: 60px;
-}
 
 /* 프로젝트 목업: 오른쪽 내용 */
 .item-container {
@@ -308,50 +285,76 @@ section::after {
 }
 
 
-/* 디자인작업물 이미지 및 텍스트 묶음 박스 */
+/* 그래픽 디자인작업물 이미지 및 텍스트 묶음 박스 */
 
 .latest-work-section {
-    background-color: #e6e6e6;
-    height: 100vh;
-}
-
-.work section {
     display: flex;
+    padding: 20px 100px;
     flex-direction: column;
     align-items: center;
-    line-height: 20px;
-    gap: 10px;
-    padding: 100px;
-}
-
-.img2 {
-    width: 300px;
-    height: 300px;
-    background: url(../img/Image4.png), lightgray 50% / cover no-repeat;
-    margin-bottom: 20px;
+    gap: 60px;
+    align-self: stretch;
     border: 1px solid blue;
 }
 
-.work>div:nth-child(2) {
-    font-size: 25px;
-    font-weight: bold;
-    margin-bottom: 20px;
+.latest-work-section div:nth-child(1) {
+    font-size: 30px
 }
 
-.btn-box {
+/* 그래픽 디자인 작업물 배치 */
+.row {
+    width: 1200px;
+    margin:  0 auto;
+}
+
+.row ul {
     display: flex;
-    gap: 20px;
-    margin-top: 20px;
+    align-items: flex-start;
+    gap: 46px;
 }
 
-/* .btn { background-color: lightgrey; border-radius: 50px; padding: 12px; font-size: 14px; } */
+.row ul li {
+    display: inline-table;
+    width: 30%;
+}
+
+.row ul li img {
+    width: 100%;
+}
+
+#lightbox {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .7);
+    top: 0;
+    left: 0;
+    z-index: 99;
+    display: none;
+}
+
+#lightImage {
+    /* background: #fff; */
+    position: fixed;
+    left: 50%;
+    top: 100px;
+    width: 80%;
+    transform: translateX(-50%);
+    height: 60vh;
+    overflow-y: auto;
+    z-index: 999;
+}
+
+.all_scrollFixed {
+    overflow: hidden;
+}
 
 
-/* .cr-box2 { border: 1px solid blue; } */
 /* 푸터: 연락처 */
 footer {
     max-width: 1280px;
     margin: auto;
+    height: auto;
     display: flex;
     padding: 0px 100px 70px 100px;
     flex-direction: column;
