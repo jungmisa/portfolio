@@ -93,7 +93,7 @@ nav .gnb li a:hover:after {
 /* 자기소개 애니메이션 */
 
 #anislow {
-	width: 100px;
+	width: 70px;
 }
 
 
@@ -145,7 +145,7 @@ nav .gnb li a:hover:after {
 .animation-box {
 	display: flex;
 	justify-content: center;
-	gap: 30px;
+	gap: 40px;
 }
 
 .progress-bar .bar {
@@ -299,7 +299,6 @@ button {
 	width: 130px;
 	height: 40px;
 	color: #fff;
-	border-radius: px;
 	padding: 10px 25px;
 	font-size: 16px;
 	font-weight: bold;
