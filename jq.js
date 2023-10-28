@@ -1,149 +1,78 @@
-//리팩토링 - 검토해서 좀더 나은 것으로 교체한다.
-
-//변수 초기화
 const win = $(window);
-const gnb = $('.gnb li');
 const sections = $('.section');
-//프로젝트변수
 const projects = $('.projects');
-const sideNav = $('.sideNav >li');
-const speed = Math.floor($(window).height() * 0.9);
-let winSCT;
+const progressBarItems = $('.progress-bar');
 let topArr = [];
-//gnb
-gnb.on({
-	/*     mouseover: function (e) { //마우스가 요소 위에 올라왔을때 할 일
-            e.preventDefault();
-            $(this).addClass('on'); //어떤 것에 올라갈지 모르기 때문에 this를 쓴다.
-
-        },
-        mouseout: function (e) {
-            e.preventDefault();
-            $(this).removeClass('on');
-        }, */
-	click: function () {
-		let tg = $(this);
-		let index = tg.index();
-		let section = sections.eq(index); //요소를 선택한다.
-		let offset = section.offset().top; //속성을 가져온다.
-		$('html, body').stop().animate({ scrollTop: offset }, 1000, 'easeOutCirc');
-	},
-});
-
-//이벤트 스크롤 상단메뉴 스티키
-win.on('scroll', function () {
-	let sct = win.scrollTop();
-
-	//li들의 서로 다른 값을 얻으러면 이치문을 써야 함.
-	sections.each(function (i) {
-		// console.log(sections.eq(i).offset().top);
-		if (sct >= sections.eq(i).offset().top - 300) {
-			gnb.eq(i).addClass('on').siblings().removeClass('on');
-			//siblings()형제요소 //top - 300(스피드 속도값을 빼서 타이밍을 좀더 빠르게)
-			sideNav.eq(i).addClass('on').siblings().removeClass('on');
-			sections.eq(i).addClass('on').siblings().removeClass('on');
-			//전부 다 연결시킴. 클래스는 on으로 통일해야 된다. 숫자도 같아야 함.
-		}
-	});
-
-	/* if(sct > 400){
-        $('nav').addClass('sticky');
-    } else {
-        $('nav').removeClass('sticky');
-    } */
-	//삼항연산자. 조건 ? 진실일때 할 일 : 거짓일 때 할 일
-	sct > 400 ? $('nav').addClass('sticky') : $('nav').removeClass('sticky');
-});
-
-$(function () {
-	const progressWrap = $('.progress-bar');
-	const animationOst = $('.animation').offset().top - 600;
-	let isAni = false;
-	//윈도우의 스크롤 탑값이 애니메이션의 오프셋의 값보다 크거나 같고 isAni의 값이 false면 조건문 실행=> 윈도우의 스크롤바가 스킬바 섹션 안으로 진입했고 애니메이션은 미실행 상태
-	$(window).scroll(function () {
-		if ($(window).scrollTop() >= animationOst && !isAni) {
-			progressAnimation();
-		}
-	});
-
-	//애니메이션바
-
-	function progressAnimation() {
-		progressWrap.each(function () {
-			var $this = $(this),
-				progressBar = $this.find('.bar'),
-				progressText = $this.find('.rate'),
-				progressRate = progressText.attr('data-rate');
-			progressBar.animate({ width: progressRate + '%' }, 2500);
-			// console.log(progressText);
-
-			const textFn = function () {
-				$({ rate: 0 })
-					.stop()
-					.animate(
-						{ rate: progressRate },
-						{
-							duration: 2000,
-							progress: function () {
-								let now = this.rate;
-								progressText.text(Math.floor(now) + '%');
-							},
-							complete: function () {
-								isAni = true;
-							},
-						}
-					);
-			};
-		});
-	}
-});
-
-//타입 애니메이션
-$(document).ready(function () {
-	setInterval(function () {
-		var currentText = $('#animated-text').text();
-		if (currentText == '디자이너') {
-			$('#animated-text').text('나무늘보');
-		} else {
-			$('#animated-text').text('디자이너');
-		}
-	}, 2500); // Change text every second
-});
-
-// 프로젝트 애니메이션
+let isAni = false;
+const speed = Math.floor(win.height() * 0.9); // speed 변수 추가
+/* 프로젝트 섹션 상단좌표 */
 projects.each((i, project) => {
-	const projectTop = $(project).offset().top;
-	console.log(projectTop);
-	topArr.push(projectTop);
-	console.log(topArr);
+	topArr.push($(project).offset().top);
 });
 
+$('.gnb li').on('click', function () {
+	const index = $(this).index();
+	const offset = sections.eq(index).offset().top;
+	$('html, body').stop().animate({ scrollTop: offset }, 1000, 'easeOutCirc');
+});
+
+/* 스크롤 함수 */
 win.on('scroll', () => {
-	winSCT = win.scrollTop();
-	// 프로젝트 애니메이션
-	// 목업이 날아옴
-	// 프로젝트1
-	if (winSCT > topArr[0] - speed) {
-		/* section.removeClass('is-animated') */
+	const scrollTop = win.scrollTop();
+	sections.each(function (i) {
+		if (scrollTop >= sections.eq(i).offset().top - 300) {
+			$('.gnb li').eq(i).addClass('on').siblings().removeClass('on');
+		}
+	});
+
+	$('nav').toggleClass('sticky', scrollTop > 400);
+
+	if (scrollTop > topArr[0] - speed) {
 		projects.eq(0).addClass('is-animated').siblings().removeClass('is-animated');
-	}
-	// 프로젝트2
-	if (winSCT > topArr[1] - speed) {
-		projects.eq(1).addClass('is-animated').siblings().removeClass('is-animated');
-		console.log(projects);
 		pipScroll();
 	}
+	if (scrollTop > topArr[1] - speed) {
+		projects.eq(1).addClass('is-animated').siblings().removeClass('is-animated');
+		pipScroll();
+	}
+
+	if (scrollTop >= $('.animation').offset().top - 600 && !isAni) progressAnimation();
 });
 
-// 마스크의 높이 / 스크린의 높이
+// 자기소개 애니메이션
+var animation = bodymovin.loadAnimation({
+	container: document.getElementById('anislow'), // Required
+	// 다운받은 제이쿼리 넣기
+	path: './ani_slow.json', // Required
+	renderer: 'svg', // Required
+	loop: true, // Optional
+	autoplay: true, // Optional
+})
+
+
+//애니메이션바
+function progressAnimation() {
+	progressBarItems.each(function () {
+		const progressBar = $(this).find('.bar');
+		const progressRate = $(this).find('.rate').attr('data-rate');
+		progressBar.animate({ width: progressRate + '%' }, 2500);
+	});
+}
+
+//타입 애니메이션
+setInterval(function () {
+	const animatedText = $('#animated-text');
+	animatedText.text(animatedText.text() == '디자이너' ? '나무늘보' : '디자이너');
+}, 2500);
+
+
+// 프로젝트 애니메이션
 function pipScroll() {
-	const devices = $('.mockup.pc, .mockup.mobile');
-	devices.each(function (i, deviceEl) {
-		let device = $(this);
-		let screen = device.find('.mask>img');
-		let mask = device.find('.mask');
-		let heightDifference = screen.innerHeight() - mask.innerHeight();
-		device.data('heightDifference', heightDifference);
+	$('.mockup.pc, .mockup.mobile').each(function () {
+		const device = $(this);
+		const screen = device.find('.mask>img');
+		const mask = device.find('.mask');
+		const heightDifference = screen.innerHeight() - mask.innerHeight();
 		device.on({
 			mouseenter: function () {
 				screen.stop().animate({ top: -heightDifference }, 1000);
@@ -154,48 +83,32 @@ function pipScroll() {
 		});
 	});
 }
-win.on('resize', function () {
-	pipScroll();
+
+win.on('resize', pipScroll);
+
+$('.tad-wrapper').each(function () {
+	const targetLink = $(this).find('.tab-menu a');
+	const tabContent = $(this).find('.tab-content>div');
+	targetLink.on('click', function (e) {
+		e.preventDefault();
+		const currentLink = $(this).attr('href');
+		tabContent.hide();
+		$(currentLink).show();
+		targetLink.removeClass('active');
+		$(this).addClass('active');
+	});
 });
 
-
-// 탭 구현
-$(() => {
-    const tadWrapper = $('.tad-wrapper');
-    tadWrapper.each(function () {
-        let currentEl = $(this); //this = 윈도우
-        const targetLink = currentEl.find('.tab-menu a');
-        const tabContent = currentEl.find('.tab-content>div');
-
-        targetLink.on('click', function (e) {
-            e.preventDefault();
-            let tg = $(this); //위 this랑 다름. 타겟된 a태그 셋
-            let currentLink = tg.attr("href");
-            console.log(currentLink); //아이디 탭 속성이 반환된다.
-            tabContent.hide();
-            $(currentLink).show();
-            
-            targetLink.removeClass('active');
-            tg.addClass('active');
-        })
-
-    }) /* 반복적으로 사용가능 */
-})
-
-// 갤러리 이미지
-const pics = $('.pic');
 const lightbox = $('#lightbox');
 const lightImg = $('#lightImage');
 
-pics.on('click', function () {
-    const bigLocation = $(this).attr("data-src");
-    lightImg.load(bigLocation);
-    lightbox.css('display','block');
-    // 바깥의 스크롤 사라짐
-    $('.port-container').addClass('all_scrollFixed');
-    // 클릭하면 사라짐
-    lightbox.on('click',function(){
-        lightbox.css('display', 'none');
-        $('.port-container').removeClass('all_scrollFixed');
-    })
-})
+$('.pic').on('click', function () {
+	lightImg.attr('src', $(this).data('src'));
+	lightbox.show();
+	$('.port-container').addClass('all_scrollFixed');
+});
+
+lightbox.on('click', function () {
+	lightbox.hide();
+	$('.port-container').removeClass('all_scrollFixed');
+});

@@ -26,6 +26,8 @@ nav {
 
 /* 자기 소개 및 사진 들어가는 곳 */
 
+/* 자기 소개 및 사진 들어가는 곳 */
+
 .about {
     min-width: 1280px;
     position: relative;
@@ -35,7 +37,7 @@ nav {
     align-self: stretch;
     justify-content: center;
     height: auto;
-    padding: 100px;
+    padding: 80px 100px;
     gap: 10px;
 }
 
@@ -68,28 +70,31 @@ section::after {
     /* border: 1px solid blue; */
 }
 
-.introduce div:nth-child(1) {
+.introduce div:nth-child(2) {
     color: var(--primary1);
     font-size: 25px;
     font-weight: bold;
 }
 
-.introduce div:nth-child(2) {
+.introduce div:nth-child(3) {
     font-size: 40px;
     font-weight: bold;
     line-height: 55px;
 }
 
-.introduce div:nth-child(3) {
-    font-size: 15px;
+.introduce div:nth-child(4) {
+    width: 75%;
+    font-size: 18px;
+    color: var(--text2);
 }
 
 .about .photo {
-    /* position: relative; */
+    position: relative;
     min-width: 486px;
     height: 600px;
     background: url(../img/port_img-01-01.png), 50% / cover no-repeat;
     /* border: 1px solid blue; */
+    z-index: 1;
 }
 
 /* 스킬 부분 */
@@ -190,59 +195,69 @@ section::after {
     transform: translateY(-30px);
 }
 
-/* 경력 */
+/* 경력(인적사항/학력/경력) */
 .career {
     display: flex;
-    padding: 100px 100px 150px 100px;
-    flex-direction: column;
+    height: auto;
+    padding: 80px 100px;
+    justify-content: flex-end;
     align-items: center;
-    gap: 10px;
-    align-self: stretch;
-    /* border: 1px solid red; */
-}
-
-.cr-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 55px;
-}
-
-.cr-text {
-    font-size: 30px;
-    font-weight: bold;
 }
 
 .cr-box {
     display: flex;
     align-items: flex-start;
-    gap: 67.5px;
-    /* border: 1px solid blue; */
+    gap: 115px;
 }
 
-.career-box {
-    /* display: flex; */
-    width: 315px;
-    /* padding: 30px 50px 30px 30px; */
-    padding: 20px;
-    align-items: flex-start;
-    gap: 10px;
-    background-color: var(--background);
-    border: 2px solid var(--primary1);
-}
-
-
-.cr-text_1 {
+.cr-box1 {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 20px;
-    align-self: stretch;
-    /* border: 1px solid blue; */
+    gap: 57px;
 }
 
-.cr-tilte {
-    font-size: 20px;
+.cr-info {
+    width: 340px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+.about-info1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 40px;
+    font-weight: bold;
+    color: var(--primary1);
+}
+
+.about-info2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    font-size: 24px;
+    color: var(--text2);
+}
+
+.about-info2>div:nth-child(2) {
+    width: 340px;
+}
+
+.cr-box2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 43px;
+}
+
+.pt-point {
+    font-size: 25px;
+    font-weight: bold;
 }
 
 
@@ -255,7 +270,7 @@ section::after {
 
 .item-text1 {
     width: 80%;
-    margin-top: 30px;
+    margin-top: 10px;
     line-height: 40px;
     font-weight: bold;
     padding-bottom: 10px;
@@ -274,14 +289,16 @@ section::after {
 }
 
 .item-text1>div:nth-child(2) {
-    font-size: 32px;
+    font-size: 40px;
     font-size: bold;
+    color: var(--primary1);
 }
 
 .item-text2 {
     width: 100%;
-    font-size: 18px;
+    font-size: 20px;
     line-height: 40px;
+    color: var(--text2);
     /* border: 1px solid blue; */
 }
 
