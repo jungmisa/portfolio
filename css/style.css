@@ -35,7 +35,7 @@ nav {
     flex-direction: column;
     align-items: center;
     align-self: stretch;
-    justify-content: center;
+    justify-content:center;
     height: auto;
     padding: 80px 100px;
     gap: 10px;
@@ -92,7 +92,7 @@ section::after {
     position: relative;
     min-width: 486px;
     height: 600px;
-    background: url(../img/port_img-01-01.png), 50% / cover no-repeat;
+    background: url(../img/port-photo.png), 50% / cover no-repeat;
     /* border: 1px solid blue; */
     z-index: 1;
 }
@@ -405,7 +405,7 @@ footer {
     width: 135px;
     height: 135px;
     border-radius: 50%;
-    background: var(--primary1);
+    background:url(../img/circle-footer-photo.png)
 }
 
 .footer-btn {
