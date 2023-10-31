@@ -54,7 +54,7 @@ section::after {
     align-items: center;
     width: 1080px;
     height: auto;
-    gap: 28px;
+    gap: 70px;
     position: relative;
     /* border: 1px solid blue; */
 }
