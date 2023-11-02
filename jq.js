@@ -5,6 +5,16 @@ const progressBarItems = $('.progress-bar');
 let topArr = [];
 let isAni = false;
 const speed = Math.floor(win.height() * 0.9); // speed 변수 추가
+
+//a버튼
+$('a').on('click', function (e) {
+    if ($(this).attr('href') == '#') {
+        e.preventDefault();
+    } else {
+
+    }
+})
+
 /* 프로젝트 섹션 상단좌표 */
 projects.each((i, project) => {
 	topArr.push($(project).offset().top);
