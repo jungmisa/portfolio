@@ -387,7 +387,7 @@ div.card:hover div.front {
     align-items: center;
     gap: 60px;
     align-self: stretch;
-    display: none;
+    /* display: none; */
 }
 
 .latest-work-section div:nth-child(1) {
@@ -398,15 +398,8 @@ div.card:hover div.front {
 
 /* 피그마 */
 
-.figma-text {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-left: 17%;
-    font-size: 25px;
-    font-size: bold;
-}
-
 .figma {
+    margin-top: 40px;
     margin-left: 230px;
     position: relative;
     width: 360px;
@@ -428,8 +421,17 @@ div.card:hover div.front {
 iframe {
     display: block;
     position: absolute;
-    width: 318px;
+    width: 320px;
     height: 561px;
+}
+
+
+.figma-text {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 17%;
+    font-size: 25px;
+    font-size: bold;
 }
 
 /* 푸터: 연락처 */
@@ -481,4 +483,5 @@ footer {
     background-color: var(--primary1);
     text-align: center;
     line-height: 150px;
+    color: var(--text2);
 }
