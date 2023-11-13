@@ -53,7 +53,7 @@ win.on('scroll', () => {
 var animation = bodymovin.loadAnimation({
 	container: document.getElementById('anislow'), // Required
 	// 다운받은 제이쿼리 넣기
-	path: './ani_slow.json', // Required
+	path: './js/ani_slow.json', // Required
 	renderer: 'svg', // Required
 	loop: true, // Optional
 	autoplay: true, // Optional
