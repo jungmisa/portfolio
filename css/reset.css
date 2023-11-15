@@ -145,12 +145,12 @@ table {
 }
 
 :root {
-    --primary1: #74E5C3;
-    --primary2: #5AB59A;
-    --secondary: #BEA380;
-    --text1: #1C1C1C;
+    --primary1: #74e5c3;
+    --primary2: #5ab59a;
+    --secondary: #Bea380;
+    --text1: #1c1c1c;
     --text2: #646478;
-    --text3: #A7A7A7;
+    --text3: #a7a7a7;
     --background: #fff;
 }
 
@@ -163,14 +163,12 @@ html {
 
 body {
     font-family: 'Pretendard', sans-serif;
-    color: var(--text1);
     font-size: 1.6rem;
     line-height: 1.75;
 }
 
 a {
     text-decoration: none;
-    color: var(--text1);
 }
 
 a:hover {
