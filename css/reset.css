@@ -147,12 +147,13 @@ table {
 :root {
     --primary1: #74e5c3;
     --primary2: #5ab59a;
-    --secondary: #Bea380;
+    --secondary: #bea380;
     --text1: #1c1c1c;
     --text2: #646478;
     --text3: #a7a7a7;
     --background: #fff;
 }
+
 
 html {
     overflow-y: scroll;
