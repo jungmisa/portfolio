@@ -1,7 +1,7 @@
 /* 가장 큰 부분 */
 .wrap {
     width: 100%;
-    background-color: #fff;
+    background-color: var(--background);
     overflow-x: hidden;
     /* border: 1px solid blue; */
 }
@@ -113,7 +113,6 @@ section::after {
     margin: auto;
     gap: 100px;
     /* border: 1px solid blue; */
-    border: 1px solid blue;
 }
 
 /* 이미지로 소개하는 나의 프로필 */
@@ -228,8 +227,8 @@ div.card div {
     text-align: center;
     line-height: 230px;
     color: var(--primary1);
-    background-color: #fff;
-    border: 8px solid #fff;
+    background-color: var(--background);
+    border: 8px solid var(--background);
     border-radius: 5px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5), 2px 2px 35px rgba(0, 0, 0, 0.1);
     transition: all 1s ease;
@@ -353,7 +352,7 @@ div.card:hover div.front {
 }
 
 .item-text1 span {
-    color: #62DAB7
+    color: var(--primary1)
 }
 
 
