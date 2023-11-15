@@ -141,8 +141,9 @@ table {
 /* custom */
 * {
     box-sizing: border-box;
-    -webkit-font-smoothing: antialosed;
+    -webkit-font-smoothing: antialiased;
 }
+
 
 :root {
     --primary1: #74e5c3;
